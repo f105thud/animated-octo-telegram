@@ -88,5 +88,6 @@
 	<classpathentry kind="lib" path="C:/Users/Owner/OneDrive - Computer Aid, Inc/Documents/lib/opentelemetry-semconv-1.25.0-alpha.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Owner/OneDrive - Computer Aid, Inc/Documents/lib/reactive-streams-1.0.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Owner/OneDrive - Computer Aid, Inc/Documents/lib/slf4j-api-2.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/users/owner/OneDrive - Computer Aid, Inc/Documents/Selenium/selenium-api-4.9.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
