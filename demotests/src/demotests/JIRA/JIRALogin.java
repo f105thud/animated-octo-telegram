@@ -1,12 +1,17 @@
 package demotests.JIRA;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -18,7 +23,7 @@ public class JIRALogin {
 		
 		// Specify the file location I used . operation here because
 		//we have object repository inside project directory only
-		File src=new File(".Object_Repo.properties");
+		File src=new File("jirarepo.properties");
 
 		// Create FileInputStream object
 		FileInputStream objfile=new FileInputStream(src);
@@ -38,6 +43,7 @@ public class JIRALogin {
         String expectedTitle = "https://mattroe96.atlassian.net/jira/software/projects/SCRUM/boards/1";
         String actualTitle = "";
         String email = "matt.roe.96@hotmail.com";
+        String password = "343GuiltySpark";
         
         // Launch browser
         driver.get(baseUrl);
@@ -50,10 +56,29 @@ public class JIRALogin {
         } else {
             System.out.println("Need to log in");
             driver.findElement(By.xpath(obj.getProperty("jira.login.SignIn.xpath"))).click();
-            driver.findElement(By.xpath(obj.getProperty("jira.login.Email.xpath"))).sendKeys(email);
+            System.out.println("Sign in Clicked");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.findElement((By.cssSelector("input#username.css-1kxou5n"))).sendKeys(email);
             driver.findElement(By.xpath(obj.getProperty("jira.login.Continue.xpath"))).click();
-            driver.findElement((By.cssSelector("button#social-login-submit.css-1crekw4"))).click();
-            driver.findElement(By.xpath(obj.getProperty("jira.login.UsernameTile.xpath"))).click();
+            System.out.println("Email entered");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.findElement(By.xpath(obj.getProperty("jira.login.ContinueWithMicrosoft.xpath"))).click();
+            System.out.println("Continue with Microsoft clicked");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.findElement(By.xpath(obj.getProperty("jira.login.MicrosoftEmail.xpath"))).sendKeys(email);
+            driver.findElement(By.xpath(obj.getProperty("jira.login.MicrosoftNext.xpath"))).click();
+            System.out.println("Microsoft Email entered");
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            if ( driver.findElement(By.cssSelector("input#i0118")).isDisplayed()) {
+            	System.out.println("Password is displayed");
+            } else {
+            	System.out.println("Password is not displayed");
+            }
+            driver.findElement(By.xpath(obj.getProperty("jira.login.MicrosoftPassword.xpath"))).sendKeys(password);
+            driver.findElement(By.xpath(obj.getProperty("jira.login.MicrosoftSignIn.xpath"))).click();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.findElement(By.xpath(obj.getProperty("jira.login.YesButton.xpath"))).click();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.findElement(By.xpath(obj.getProperty("jira.maincreen.Atlassian.xpath"))).isDisplayed();
             System.out.println("Logged in!");
         }
