@@ -1,25 +1,13 @@
-package iNaturalist;
+package iNaturalist.MainScreen;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import java.time.Duration;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import java.time.*;
 
-public class GoToObservations {
-	
+public class GoToCalendar {
 	public static void main(String[] args) throws IOException {
 		// Specify the file location I used . operation here because
 		//we have object repository inside project directory only
@@ -37,15 +25,15 @@ public class GoToObservations {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
-		driver.findElement(By.cssSelector("#wrapper > div > div:nth-child(2) > div:nth-child(2) > div > ul > li:nth-child(3) > a"));
+		driver.findElement(By.cssSelector("#wrapper > div > div:nth-child(2) > div:nth-child(2) > div > ul > li:nth-child(7) > a"));
 		
-		String expectedtitle = "https://www.inaturalist.org/observations?place_id=any&user_id=matt-roe&verifiable=any";
+		String expectedtitle = "https://www.inaturalist.org/calendar/matt-roe";
 		String actualtitle = "";
 		
 		actualtitle = driver.getCurrentUrl();
 		
 		if (actualtitle.contentEquals(expectedtitle)) {
-            System.out.println("Observations tab displayed!");
+            System.out.println("Calendar tab displayed!");
 		}
 	}
 }
