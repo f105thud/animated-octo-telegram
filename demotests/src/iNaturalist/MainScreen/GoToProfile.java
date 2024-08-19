@@ -26,6 +26,7 @@ public class GoToProfile {
 				System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
 				WebDriver driver = new ChromeDriver();
 				
+				
 				driver.findElement(By.cssSelector("#wrapper > div > div:nth-child(2) > div:nth-child(2) > div > ul > li:nth-child(2) > a"));
 				
 				String expectedtitle = "https://www.inaturalist.org/people/matt-roe";
