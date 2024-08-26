@@ -3,6 +3,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 public class SearchForTaxon {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 		// Specify the file location I used . operation here because
 		//we have object repository inside project directory only
 		File src=new File("jirarepo.properties");
@@ -29,14 +30,16 @@ public class SearchForTaxon {
 		
 		System.out.println("Property class loaded");
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.setHeadless(true);
 		WebDriver driver = new ChromeDriver();
 		
 		String taxon = "";
 		driver.findElement(By.cssSelector("#Lifelist > div.FlexGrid > div.FlexCol.tree-col > div.form-group.TaxonAutocomplete > div > span")).sendKeys(taxon);
 		driver.findElement(By.cssSelector("#ui-id-69 > div > div.ac-label > div > span.title")).click();
 		
-		String commonname = driver.findElement(By.className("comname display-names")).toString();
-		String scientificname = driver.findElement(By.className("sciname.species.secondary-name")).toString();
+		String commonname = driver.findElement(By.className("comname display-names")).getText().toString();
+		String scientificname = driver.findElement(By.className("sciname.species.secondary-name")).getText().toString();
 		
 		if (taxon.contentEquals(commonname)){
 			System.out.println("Common name matches!");

@@ -1,8 +1,10 @@
-package iNaturalist;
+package iNaturalist.UpperRibbon;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import java.time.Duration;
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,6 +37,8 @@ public class UploadPhoto {
 		obj.load(objfile);
 		System.out.println("Property class loaded");
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.setHeadless(true);
 		WebDriver driver = new ChromeDriver();
 		
         driver.findElement(By.cssSelector("#header > div.navtabs.add-obs > a > i")).click();

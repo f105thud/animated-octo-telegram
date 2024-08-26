@@ -1,4 +1,4 @@
-package iNaturalist.Lists;
+package iNaturalist.UpperRibbon;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,8 +11,10 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class ViewLifelist {
-	public static void main (String[] args) throws IOException{
+
+public class ReturntoMainScreen {
+
+	public static void main(String[] args) throws IOException {
 		// Specify the file location I used . operation here because
 		//we have object repository inside project directory only
 		File src=new File("jirarepo.properties");
@@ -32,13 +34,18 @@ public class ViewLifelist {
 		options.setHeadless(true);
 		WebDriver driver = new ChromeDriver();
 		
-		//Click the Life List Button
-		driver.findElement(By.cssSelector("#life-list > a")).click();
+		//click iNaturalist logo and return to the iNaturalist main screen
+		driver.findElement(By.cssSelector("#logonav > a > img")).click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        if (driver.findElement(By.cssSelector("#Lifelist > div.lifelist-title")).isDisplayed()){
-        	System.out.println("Life List displayed!");
+        
+        String expectedURL = "https://www.inaturalist.org/home";
+        String actualURL = driver.getCurrentUrl();
+        
+        if (actualURL.contentEquals(expectedURL)) {
+        	System.out.println("Back to main screen!");
         }else {
-        	System.out.println("Life List not displayed");
+        	System.out.println("Not on main screen");
         }
 	}
+
 }
