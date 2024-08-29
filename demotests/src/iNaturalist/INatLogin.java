@@ -10,23 +10,10 @@ import java.util.concurrent.TimeUnit;
 
 
 public class INatLogin {
-	public static void main (String[] args) throws IOException{
-		// Specify the file location I used . operation here because
-		//we have object repository inside project directory only
-		File src=new File("jirarepo.properties");
-
-		// Create FileInputStream object
-		FileInputStream objfile=new FileInputStream(src);
-
-		// Create Properties class object to read properties file
-		Properties obj=new Properties();
-
-		// Load file so we can use in our script
-		obj.load(objfile);
+	public static void INatLogin (WebDriver driver){
 		
-		System.out.println("Property class loaded");
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		/*System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();*/
 		
 		String baseUrl = "https://inaturalist.org";
         String expectedTitle = "https://mattroe96.atlassian.net/jira/software/projects/SCRUM/boards/1";

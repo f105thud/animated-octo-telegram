@@ -22,7 +22,7 @@ import java.time.*;
 
 public class UploadPhoto {
 	
-	public static void main(String[] args) throws IOException {
+	public static void UploadPhoto(WebDriver driver) {
 		// Specify the file location I used . operation here because
 		//we have object repository inside project directory only
 		File src=new File("jirarepo.properties");
@@ -54,7 +54,7 @@ public class UploadPhoto {
         WebElement Open = driver.findElement(By.name("Open"));
         Open.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        System.out.println("Photo is selected");
+        System.out.println("Photos are selected");
 	}
 
 }

@@ -12,7 +12,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class CreateNewList {
-	public static void main (String[] args) throws IOException {
+	public static void main (String [] args) throws IOException {
 		// Specify the file location I used . operation here because
 		//we have object repository inside project directory only
 		File src=new File("jirarepo.properties");
