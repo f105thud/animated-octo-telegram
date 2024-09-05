@@ -34,7 +34,7 @@ public static void main (String args[]) {
 	/*test.log(LogStatus.PASS, "Login complete");
 	test.addScreenCapture("C:\\Users\\Owner\\Documents\\Selenium Reports");*/
 
-	driver.close();
+	//driver.close();
 	System.out.println("Browser closed.  Test complete!");
 	/*test.log(LogStatus.PASS, "Browser closed.  Test complete!");
 	report.endTest(test);

@@ -23,23 +23,9 @@ import java.time.*;
 public class UploadPhoto {
 	
 	public static void UploadPhoto(WebDriver driver) {
-		// Specify the file location I used . operation here because
-		//we have object repository inside project directory only
-		File src=new File("jirarepo.properties");
-
-		// Create FileInputStream object
-		FileInputStream objfile=new FileInputStream(src);
-
-		// Create Properties class object to read properties file
-		Properties obj=new Properties();
-
-		// Load file so we can use in our script
-		obj.load(objfile);
-		System.out.println("Property class loaded");
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.setHeadless(true);
-		WebDriver driver = new ChromeDriver();
 		
         driver.findElement(By.cssSelector("#header > div.navtabs.add-obs > a > i")).click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

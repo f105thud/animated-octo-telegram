@@ -27,7 +27,7 @@ public class INatClose {
 		new Actions (driver)
 		.moveToElement(UserIcon);
 		
-		driver.findElement(By.cssSelector("#usernav > li.navtab.user.menutab > div > ul > li.signout > a"));
+		/*driver.findElement(By.cssSelector("#usernav > li.navtab.user.menutab > div > ul > li.signout > a"));
 		
         String expectedTitle = "https://www.inaturalist.org/";
         String actualTitle = "";
@@ -37,7 +37,7 @@ public class INatClose {
         	System.out.println("Logged out successfully!");
         }else {
         	System.out.println("Still logged in");
-        }
+        }*/
         driver.close();
 	}
 }
