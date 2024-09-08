@@ -10,7 +10,7 @@ import java.util.Properties;
 public class GoToLists {
 	public static void GoToLists(WebDriver driver) {
 
-		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div[1]/div/ul/li[7]/a"));
+		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div[2]/div/ul/li[7]/a")).click();
 		
 		String expectedtitle = "https://www.inaturalist.org/lists/matt-roe";
 		String actualtitle = "";
