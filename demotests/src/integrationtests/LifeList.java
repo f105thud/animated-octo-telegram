@@ -16,6 +16,9 @@ import iNaturalist.INatLogin;
 import iNaturalist.INatClose;
 import iNaturalist.Lists.ViewLifelist;
 import iNaturalist.MainScreen.GoToLists;
+import iNaturalist.Lists.SearchForTaxon;
+import iNaturalist.Lists.FilterByPlace;
+
 
 
 public class LifeList {
@@ -29,12 +32,18 @@ public class LifeList {
 		INatClose iNatClose = new INatClose();
 		ViewLifelist viewlifelist = new ViewLifelist();
 		GoToLists gotolists = new GoToLists();
+		SearchForTaxon searchfortaxon = new SearchForTaxon();
+		FilterByPlace filterbyplace = new FilterByPlace();
 		
 		iNatLogin.INatLogin(driver);
 		Thread.sleep(10000);
 		gotolists.GoToLists(driver);
 		Thread.sleep(3000);
 		viewlifelist.ViewLifeList(driver);
+		Thread.sleep(3000);
+		searchfortaxon.SearchForTaxon(driver);
+		Thread.sleep(3000);
+		filterbyplace.FilterByPlace(driver);
 		Thread.sleep(3000);
 		iNatClose.INatClose(driver);
 		System.out.println("Browser closed.  Test complete!");

@@ -15,6 +15,8 @@ public class SearchForTaxon {
 
 		
 		String taxon = "Turkey Vulture";
+		
+		driver.findElement(By.cssSelector("#Lifelist > div.FlexGrid > div.FlexCol.tree-col > div.form-group.TaxonAutocomplete > div > span")).click();
 		driver.findElement(By.cssSelector("#Lifelist > div.FlexGrid > div.FlexCol.tree-col > div.form-group.TaxonAutocomplete > div > span")).sendKeys(taxon);
 		driver.findElement(By.cssSelector("#ui-id-69 > div > div.ac-label > div > span.title")).click();
 		
