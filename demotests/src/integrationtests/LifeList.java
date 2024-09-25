@@ -25,7 +25,7 @@ public class LifeList {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Program Files (x86)\\chromedriver-win64\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
 		INatLogin iNatLogin = new INatLogin();

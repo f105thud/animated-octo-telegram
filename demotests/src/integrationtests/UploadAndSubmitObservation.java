@@ -20,7 +20,7 @@ public class UploadAndSubmitObservation {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Owner\\OneDrive - Computer Aid, Inc\\Documents\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Program Files (x86)\\chromedriver-win64\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		/*report = new ExtentReports(System.getProperty("C:\\Users\\Owner\\Documents\\Selenium Reports")+"ExtentReportResults.html");
 		test = report.startTest("ExtentDemo");*/	
