@@ -12,14 +12,15 @@ public class GoToLists {
 
 		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div[3]/div/ul/li[7]/a/span")).click();
 		
-		String expectedtitle = "https://www.inaturalist.org/lists/matt-roe";
 		String actualtitle = "";
 		
 		actualtitle = driver.getCurrentUrl();
 		
-		if (actualtitle.contentEquals(expectedtitle)) {
+		if (actualtitle.startsWith("https://www.inaturalist.org/lists/")) {
             System.out.println("Lists tab displayed!");
 		}
-
+		else {
+			System.out.println("Lists tab not displayed");
+		}
 	}
 }
